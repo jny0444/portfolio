@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-xanh: "Xanh Mono", monospace;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.org-content {
+  line-height: 1.6;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.org-content p {
+  margin-bottom: 1rem;
+}
+
+/* Cursor effect */
+.org-content:after {
+  content: "█";
+  animation: cursor 1s infinite;
+}
+
+/* Remove blinking cursor */
+*::after {
+  content: none !important;
+}
+
+@keyframes cursor {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Mobile menu transitions */
+nav {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Custom scrollbar styles */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: #98be65;
+  border-radius: 3px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background: #7a9850;
+}
