@@ -86,7 +86,7 @@ const App = () => {
               </div>
               <div className="flex justify-center">
                 <img
-                  src={portfolioImg}
+                  src={"https://github.com/jny0444/portfolio/blob/main/src/assets/img.jpg?raw=true"}
                   alt="Portfolio banner"
                   className="mt-4 w-full max-w-md rounded-lg shadow-lg"
                 />
