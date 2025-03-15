@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.outer-div > div {
+  @apply p-4 h-40 md:h-52 ;
+}
