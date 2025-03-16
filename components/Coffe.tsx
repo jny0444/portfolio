@@ -22,7 +22,7 @@ export default function Coffee() {
     <div>
       <pre>
         {String.raw
-`       ${frames2[index]}
+`       ${frames2[index2]}
        ${frames[index]}
       +-----+
       |     |]
