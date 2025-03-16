@@ -1,12 +1,23 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function Navbar() {
+    const router = useRouter();
   const [isClicked, setIsClicked] = useState(false);
   const [activeItem, setActiveItem] = useState<string | null>(null);
   const [selectedNav, setSelectedNav] = useState<string | null>(null);
   const [viewMode, setViewMode] = useState<"Grid" | "List">("Grid");
+
+  const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedYear = event.target.value;
+    router.push(`#${selectedYear}`, undefined, { shallow: true });
+
+    // Scroll to the section
+    document.getElementById(selectedYear)?.scrollIntoView({ behavior: "smooth" });
+  };
+
 
   const handleNavClick = (item: string) => {
     setActiveItem(item);
@@ -87,7 +98,7 @@ export default function Navbar() {
             {viewMode}
           </li>
           <li className="py-1">
-            <select className="w-full md:w-auto cursor-s-resize">
+            <select className="w-full md:w-auto cursor-s-resize" onChange={handleSelectChange}>
               <option>2025</option>
               <option>2024</option>
               <option>2023</option>

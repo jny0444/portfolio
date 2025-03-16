@@ -81,7 +81,15 @@ export default function Home() {
           </ol>
         </div>
         <Coffee />
+        <div className="hover:cursor-copy">
+          <p>Design</p>
+          <p>Heavily inspired by</p>
+          <a href="https://chia.design" className="text-sm underline">
+            chia.design
+          </a>
+        </div>
         <Project2025 />
+        
       </div>
     </div>
   );
