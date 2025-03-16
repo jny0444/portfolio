@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
 import LinkTo from "@/components/LinkTo";
@@ -8,9 +11,12 @@ import Coffee from "@/components/Coffe";
 import Project2025 from "@/components/Project-2025";
 
 export default function Home() {
+  const [activeItem, setActiveItem] = useState<string | null>(null);
+
   return (
     <div>
-      <Navbar />
+      <Navbar activeItem={activeItem} setActiveItem={setActiveItem} />
+
       <div className="outer-div grid grid-cols-2 md:grid-cols-5 p-5">
         <div className="text-lg hover:cursor-help">
           Thokchom Jnyandeep Singh
@@ -89,7 +95,6 @@ export default function Home() {
           </a>
         </div>
         <Project2025 />
-        
       </div>
     </div>
   );

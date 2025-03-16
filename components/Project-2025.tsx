@@ -10,7 +10,7 @@ export default function Project2025() {
         if (index < 4) {
           return (
             <div key={index}>
-              <LinkTo href={project.link} underline="underline">
+              <LinkTo href={project.link as string} underline="underline">
                 <p className="text-base">{project.title}</p>
                 <p className="text-sm">{project.description}</p>
                 <p className="text-sm">{project.date}</p>
@@ -35,7 +35,7 @@ export default function Project2025() {
         if (index >= 4) {
           return (
             <div key={index}>
-              <LinkTo href={project.link} underline="underline">
+              <LinkTo href={project.link as string} underline="underline">
                 <p className="text-base">{project.title}</p>
                 <p className="text-sm">{project.description}</p>
                 <p className="text-sm">{project.date}</p>
