@@ -4,6 +4,8 @@ import LinkTo from "@/components/LinkTo";
 import QuickLinks from "@/components/QuickLinks";
 import AboutAndContact from "@/components/About&Contact";
 import CowSay from "@/components/CowSay";
+import Coffee from "@/components/Coffe";
+import Project2025 from "@/components/Project-2025";
 
 export default function Home() {
   return (
@@ -42,11 +44,44 @@ export default function Home() {
           </LinkTo>
         </div>
         <div className="hover:cursor-ne-resize">
-          <LinkTo href="https://drive.google.com/file/d/1aL4ta6Lz_aRiqDgYuwTWCCMJlC0bWBfe/view?usp=drivesdk" underline="underline">
-            <p>Resume</p>
-            <p className="text-sm">Updated every now and then</p>
-          </LinkTo>
+          <a
+            href="https://drive.google.com/file/d/1aL4ta6Lz_aRiqDgYuwTWCCMJlC0bWBfe/view?usp=drivesdk"
+            className="hover:cursor-ne-resize"
+          >
+            <p className="cursor-ne-resize">Resume</p>
+            <p className="text-sm cursor-ne-resize">
+              Updated every now and then
+            </p>
+          </a>
         </div>
+        <div className="hover:cursor-help">
+          <p>Languages</p>
+          <ol className="text-sm">
+            <li>Solidity</li>
+            <li>Rust</li>
+            <li>JS</li>
+            <li>C/C++</li>
+          </ol>
+        </div>
+        <div>
+          <p>Blockchain Tech</p>
+          <ol className="text-sm">
+            <li>IPFS</li>
+            <li>Hardhat</li>
+            <li>Foundry</li>
+            <li>Wagmi</li>
+          </ol>
+        </div>
+        <div>
+          <p>Web Tech</p>
+          <ol className="text-sm">
+            <li>Next.js</li>
+            <li>React</li>
+            <li>Typescript</li>
+          </ol>
+        </div>
+        <Coffee />
+        <Project2025 />
       </div>
     </div>
   );
