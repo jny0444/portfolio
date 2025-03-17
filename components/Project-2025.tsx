@@ -9,12 +9,12 @@ export default function Project2025() {
       {project_2025.map((project, index) => {
         if (index < 4) {
           return (
-            <div key={index}>
+            <div key={index} className={project.tags.toLowerCase()}>
               <LinkTo href={project.link as string} underline="underline">
                 <p className="text-base">{project.title}</p>
                 <p className="text-sm">{project.description}</p>
                 <p className="text-sm">{project.date}</p>
-                <p className="text-sm">{project.tags}</p>
+                <p className="text-sm">{`[${project.tags}]`}</p>
               </LinkTo>
             </div>
           );
@@ -34,12 +34,12 @@ export default function Project2025() {
       {project_2025.map((project, index) => {
         if (index >= 4) {
           return (
-            <div key={index}>
+            <div key={index} className={project.tags.toLowerCase()}>
               <LinkTo href={project.link as string} underline="underline">
                 <p className="text-base">{project.title}</p>
                 <p className="text-sm">{project.description}</p>
                 <p className="text-sm">{project.date}</p>
-                <p className="text-sm">{project.tags}</p>
+                <p className="text-sm">{`[${project.tags}]`}</p>
               </LinkTo>
             </div>
           );
@@ -47,8 +47,4 @@ export default function Project2025() {
       })}
     </>
   );
-}
-
-{
-  /*  */
 }

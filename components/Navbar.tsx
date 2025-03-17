@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Navbar({
   activeItem,
@@ -12,7 +12,7 @@ export default function Navbar({
 }) {
   const router = useRouter();
   const [selectedNav, setSelectedNav] = useState<string | null>(null);
-  const [viewMode, setViewMode] = useState<"Grid" | "List">("Grid");
+  const [time, setTime] = useState<string | null>();
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedYear = event.target.value;
@@ -23,6 +23,12 @@ export default function Navbar({
       ?.scrollIntoView({ behavior: "smooth" });
   };
 
+  if (activeItem !== null) {
+    document.querySelectorAll(`.${activeItem}`).forEach((el) => {
+      el.classList.add("display-none");
+    });
+  }
+  
   const handleNavClick = (item: string) => {
     setActiveItem(item);
 
@@ -35,9 +41,18 @@ export default function Navbar({
     setTimeout(() => setActiveItem(null), 150);
   };
 
-  const toggleViewMode = () => {
-    setViewMode(viewMode === "Grid" ? "List" : "Grid");
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTime(
+        new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+        })
+      );
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -49,7 +64,9 @@ export default function Navbar({
               className={`py-1 ${
                 activeItem === item ? "cursor-grabbing" : "cursor-grab"
               } ${
-                selectedNav && selectedNav !== item ? "text-gray-400" : "text-black"
+                selectedNav && selectedNav !== item
+                  ? "text-gray-400"
+                  : "text-black"
               } `}
               onMouseDown={() => handleNavClick(item)}
             >
@@ -58,12 +75,13 @@ export default function Navbar({
           ))}
         </ul>
 
-        <ul className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-4 md:justify-between md:w-[10%] w-auto">
-          <li onClick={toggleViewMode} className="py-1 text-black cursor-ne-resize">
-            {viewMode}
-          </li>
+        <ul className="flex flex-col space-y-2 md:flex-row md:space-y-0 md:space-x-4 md:justify-between md:w-[15%] w-auto">
+          <li className="py-1 text-black cursor-ne-resize">{time}</li>
           <li className="py-1">
-            <select className="w-full md:w-auto cursor-s-resize" onChange={handleSelectChange}>
+            <select
+              className="w-full md:w-auto cursor-s-resize"
+              onChange={handleSelectChange}
+            >
               <option>2025</option>
               <option>2024</option>
               <option>2023</option>

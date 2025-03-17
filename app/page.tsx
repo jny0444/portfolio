@@ -69,7 +69,7 @@ export default function Home() {
             <li>C/C++</li>
           </ol>
         </div>
-        <div>
+        <div className="hover:cursor-help">
           <p>Blockchain Tech</p>
           <ol className="text-sm">
             <li>IPFS</li>
@@ -78,7 +78,7 @@ export default function Home() {
             <li>Wagmi</li>
           </ol>
         </div>
-        <div>
+        <div className="hover:cursor-help">
           <p>Web Tech</p>
           <ol className="text-sm">
             <li>Next.js</li>
