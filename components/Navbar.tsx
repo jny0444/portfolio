@@ -28,7 +28,7 @@ export default function Navbar({
       el.classList.add("display-none");
     });
   }
-  
+
   const handleNavClick = (item: string) => {
     setActiveItem(item);
 
@@ -56,9 +56,9 @@ export default function Navbar({
 
   return (
     <>
-      <div className="flex flex-row justify-between p-4 relative md:fixed md:top-0 md:left-0 md:right-0 md:w-full md:z-50 select-none text-sm md:text-base">
+      <div className="flex flex-row justify-between p-4 relative md:fixed md:top-0 md:left-0 md:right-0 md:w-full md:z-50 select-none text-sm md:text-base bg-gradient-to-b from-white/50 to-white/30 backdrop-blur-sm">
         <ul className="grid grid-cols-2 gap-2 md:flex md:flex-row md:space-y-0 md:space-x-4 md:justify-between md:w-[20%] w-[50%]">
-          {["project", "text", "image", "music"].map((item) => (
+          {["project", "awards", "image", "experience"].map((item) => (
             <li
               key={item}
               className={`py-1 ${
@@ -84,7 +84,6 @@ export default function Navbar({
             >
               <option>2025</option>
               <option>2024</option>
-              <option>2023</option>
             </select>
           </li>
         </ul>

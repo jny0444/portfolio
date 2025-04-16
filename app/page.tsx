@@ -3,12 +3,11 @@
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Image from "next/image";
-import LinkTo from "@/components/LinkTo";
-import QuickLinks from "@/components/QuickLinks";
 import AboutAndContact from "@/components/About&Contact";
 import CowSay from "@/components/CowSay";
 import Coffee from "@/components/Coffe";
 import Project2025 from "@/components/Project-2025";
+import Project2024 from "@/components/Project-2024";
 
 export default function Home() {
   const [activeItem, setActiveItem] = useState<string | null>(null);
@@ -32,23 +31,6 @@ export default function Home() {
         </div>
         <AboutAndContact />
         <CowSay />
-        <div className="relative">
-          <Image
-            src="/(1).png"
-            alt="me fr"
-            fill
-            className="object-contain rounded-lg"
-            draggable={false}
-          />
-        </div>
-        <QuickLinks />
-        <div>
-          <p>Current Fav Album</p>
-          <p className="text-sm">Grace - Jeff Buckley</p>
-          <LinkTo href="https://open.spotify.com/album/7yQtjAjhtNi76KRu05XWFS">
-            Spotify
-          </LinkTo>
-        </div>
         <div className="hover:cursor-ne-resize">
           <a
             href="https://drive.google.com/file/d/1aL4ta6Lz_aRiqDgYuwTWCCMJlC0bWBfe/view?usp=drivesdk"
@@ -59,6 +41,15 @@ export default function Home() {
               Updated every now and then
             </p>
           </a>
+        </div>
+        <div className="relative">
+          <Image
+            src="/(1).png"
+            alt="me fr"
+            fill
+            className="object-contain rounded-lg"
+            draggable={false}
+          />
         </div>
         <div className="hover:cursor-help">
           <p>Languages</p>
@@ -72,7 +63,7 @@ export default function Home() {
         <div className="hover:cursor-help">
           <p>Blockchain Tech</p>
           <ol className="text-sm">
-            <li>IPFS</li>
+            <li>Uniswap</li>
             <li>Hardhat</li>
             <li>Foundry</li>
             <li>Wagmi</li>
@@ -95,6 +86,7 @@ export default function Home() {
           </a>
         </div>
         <Project2025 />
+        <Project2024 />
       </div>
     </div>
   );
