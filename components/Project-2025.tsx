@@ -28,6 +28,7 @@ export default function Project2025() {
           fill
           className="object-contain rounded-lg"
           draggable={false}
+          unoptimized
         />
       </div>
 

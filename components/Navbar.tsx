@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Navbar({
@@ -11,8 +11,19 @@ export default function Navbar({
   setActiveItem: (item: string | null) => void;
 }) {
   const router = useRouter();
+  const pathname = usePathname();
   const [selectedNav, setSelectedNav] = useState<string | null>(null);
   const [time, setTime] = useState<string | null>();
+
+  // Set the initial selectedNav based on the current path when component mounts
+  useEffect(() => {
+    const currentPath = pathname.slice(1); // Remove the leading slash
+    if (["project", "awards", "image", "experience"].includes(currentPath)) {
+      setSelectedNav(currentPath);
+    } else {
+      setSelectedNav(null);
+    }
+  }, [pathname]);
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedYear = event.target.value;
@@ -32,10 +43,13 @@ export default function Navbar({
   const handleNavClick = (item: string) => {
     setActiveItem(item);
 
+    // Toggle navigation: if already on the same page, go home, otherwise go to the selected page
     if (selectedNav === item) {
       setSelectedNav(null);
+      router.push("/");
     } else {
       setSelectedNav(item);
+      router.push(`/${item}`);
     }
 
     setTimeout(() => setActiveItem(null), 150);
@@ -67,7 +81,7 @@ export default function Navbar({
                 selectedNav && selectedNav !== item
                   ? "text-gray-400"
                   : "text-black"
-              } `}
+              }`}
               onMouseDown={() => handleNavClick(item)}
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}

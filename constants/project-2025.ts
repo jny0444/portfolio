@@ -8,6 +8,13 @@ export interface Project {
 
 export const project_2025: Project[] = [
   {
+    title: "Top 5 Teams",
+    description: "4th best team in RiseIn Stellar Kasol Residency",
+    tags: "Awards",
+    date: "April 2025",
+  
+  },
+  {
     title: "Rock Paper Scissor in Rust",
     description: "Recreated Rock Paper Scissor game in Rust",
     tags: "Projects",
