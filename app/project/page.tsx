@@ -31,6 +31,15 @@ export default function Project() {
               </tr>);
             })}
           </tbody>
+          <tbody>
+            {project_2024.map((project, index) => {
+              return (<tr key={index}>
+                <td className="px-4 py-2">{project.date}</td>
+                <td className="px-4 py-2">{project.title}</td>
+                <td className="px-4 py-2">{project.description}</td>
+              </tr>);
+            })}
+          </tbody>
         </table>
       </div>
     </div>
