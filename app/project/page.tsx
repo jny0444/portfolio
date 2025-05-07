@@ -12,32 +12,41 @@ export default function Project() {
     <div>
       <Navbar activeItem={activeItem} setActiveItem={setActiveItem} />
       <div className="mx-1 p-4">
-        <h1 className="text-4xl">Projects</h1>
+        <h1 className="text-lg">Projects</h1>
 
-        <table className="table-auto w-full mt-4 border border-black">
+        <table className="table-auto w-full mt-4">
           <thead>
             <tr>
-              <th className="border border-black px-4 py-2">Date</th>
-              <th className="border border-black px-4 py-2">Title</th>
-              <th className="border border-black px-4 py-2">Description</th>
+              <th className="text-left px-4 py-2 w-1/6 font-normal">Date</th>
+              <th className="text-left px-4 py-2 w-1/6 font-normal">Title</th>
+              <th className="text-left px-4 py-2 w-4/6 font-normal">Description</th>
             </tr>
           </thead>
           <tbody>
+
             {project_2025.map((project, index) => {
-              return (<tr key={index}>
-                <td className="px-4 py-2">{project.date}</td>
-                <td className="px-4 py-2">{project.title}</td>
-                <td className="px-4 py-2">{project.description}</td>
-              </tr>);
+              if (project.tags == "Project") {
+                return (
+                  <tr key={index}>
+                    <td className="px-4 py-2 w-1/6">{project.date}</td>
+                    <td className="px-4 py-2 w-1/6">{project.title}</td>
+                    <td className="px-4 py-2 w-4/6">{project.description}</td>
+                  </tr>
+                );
+              }
             })}
           </tbody>
           <tbody>
-            {project_2024.map((project, index) => {
-              return (<tr key={index}>
-                <td className="px-4 py-2">{project.date}</td>
-                <td className="px-4 py-2">{project.title}</td>
-                <td className="px-4 py-2">{project.description}</td>
-              </tr>);
+          {project_2024.map((project, index) => {
+              if (project.tags == "Project") {
+                return (
+                  <tr key={index}>
+                    <td className="px-4 py-2 w-1/6">{project.date}</td>
+                    <td className="px-4 py-2 w-1/6">{project.title}</td>
+                    <td className="px-4 py-2 w-4/6">{project.description}</td>
+                  </tr>
+                );
+              }
             })}
           </tbody>
         </table>

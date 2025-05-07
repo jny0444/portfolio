@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Navbar from "@/components/Navbar";
+import { project_2025 } from "@/constants/project-2025";
+import { project_2024 } from "@/constants/project-2024";
 
 export default function Awards() {
   const [activeItem, setActiveItem] = useState<string | null>(null);
@@ -9,8 +11,46 @@ export default function Awards() {
   return (
     <div>
       <Navbar activeItem={activeItem} setActiveItem={setActiveItem} />
-      <h1 className="text-4xl font-bold">Awards</h1>
-      <p className="mt-4 text-lg">Coming soon...</p>
+      <div className="mx-1 p-4">
+        <h1 className="text-lg">Awards</h1>
+
+        <table className="table-auto w-full mt-4">
+          <thead>
+            <tr>
+              <th className="text-left px-4 py-2 w-1/6 font-normal">Date</th>
+              <th className="text-left px-4 py-2 w-1/6 font-normal">Title</th>
+              <th className="text-left px-4 py-2 w-4/6 font-normal">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {project_2025.map((project, index) => {
+              if (project.tags == "Awards") {
+                return (
+                  <tr key={index}>
+                    <td className="px-4 py-2 w-1/6">{project.date}</td>
+                    <td className="px-4 py-2 w-1/6">{project.title}</td>
+                    <td className="px-4 py-2 w-4/6">{project.description}</td>
+                  </tr>
+                );
+              }
+            })}
+          </tbody>
+          <tbody>
+          {project_2024.map((project, index) => {
+              if (project.tags == "Awards") {
+                return (
+                  <tr key={index}>
+                    <td className="px-4 py-2 w-1/6">{project.date}</td>
+                    <td className="px-4 py-2 w-1/6">{project.title}</td>
+                    <td className="px-4 py-2 w-4/6">{project.description}</td>
+                  </tr>
+                );
+              }
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
