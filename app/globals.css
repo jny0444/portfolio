@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+@theme {
+  --font-brat: "Arial Narrow", sans-serif;
+}
+
 .outer-div > div {
   @apply p-4 pt-0 pb-0 h-40 md:h-52 ;
 }

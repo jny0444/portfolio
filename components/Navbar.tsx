@@ -70,7 +70,7 @@ export default function Navbar({
 
   return (
     <>
-      <div className="flex flex-row justify-between p-4 relative md:fixed md:top-0 md:left-0 md:right-0 md:w-full md:z-50 select-none text-sm md:text-base bg-gradient-to-b from-white/50 to-white/30 backdrop-blur-sm">
+      <div className="flex flex-row justify-between p-4 fixed top-0 left-0 right-0 w-full z-50 select-none text-sm md:text-base bg-gradient-to-b from-white/50 via-white/30 to-transparent backdrop-blur-sm">
         <ul className="grid grid-cols-2 gap-2 md:flex md:flex-row md:space-y-0 md:space-x-4 md:justify-between md:w-[20%] w-[50%]">
           {["project", "awards", "image", "experience"].map((item) => (
             <li
@@ -102,7 +102,7 @@ export default function Navbar({
           </li>
         </ul>
       </div>
-      <div className="hidden md:block md:h-[72px]"></div>
+      <div className="h-[72px]"></div>
     </>
   );
 }
