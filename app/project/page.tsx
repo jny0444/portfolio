@@ -19,11 +19,12 @@ export default function Project() {
             <tr>
               <th className="text-left px-4 py-2 w-1/6 font-normal">Date</th>
               <th className="text-left px-4 py-2 w-1/6 font-normal">Title</th>
-              <th className="text-left px-4 py-2 w-4/6 font-normal">Description</th>
+              <th className="text-left px-4 py-2 w-4/6 font-normal">
+                Description
+              </th>
             </tr>
           </thead>
           <tbody>
-
             {project_2025.map((project, index) => {
               if (project.tags == "Project") {
                 return (
@@ -37,7 +38,7 @@ export default function Project() {
             })}
           </tbody>
           <tbody>
-          {project_2024.map((project, index) => {
+            {project_2024.map((project, index) => {
               if (project.tags == "Project") {
                 return (
                   <tr key={index}>

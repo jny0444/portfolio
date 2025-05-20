@@ -5,8 +5,8 @@ export const metadata: Metadata = {
   title: "Digital Portfolio",
   description: "Feel free to explore",
   icons: {
-    icon: "/favicon.ico"
-  }
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({

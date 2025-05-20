@@ -16,6 +16,8 @@ export default function Image() {
           autoPlay
           loop
           muted
+          playsInline
+          webkit-playsinline="true"
           className="min-h-screen min-w-full max-h-screen max-w-full object-cover"
         />
         <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-brat blur-[0.7px] z-10">
@@ -25,7 +27,7 @@ export default function Image() {
                 options={{
                   strings: [
                     "will write out stuff later on",
-                    "till then deal with this :P"
+                    "till then deal with this :P",
                   ],
                   autoStart: true,
                   loop: true,
