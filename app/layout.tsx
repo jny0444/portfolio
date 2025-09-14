@@ -1,20 +1,23 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
+import Navbar from "@/components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const appleGaramond = localFont({
+  src: "../public/font/AppleGaramond.ttf",
+  variable: "--font-apple-garamond",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const iosevkaMono = localFont({
+  src: "../public/font/IosevkaNerdFontMono.ttf",
+  variable: "--font-iosevka-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "jny0444",
-  description: "Portfolio",
+  title: "My Portfolio",
+  description: "Portfolio of my work",
 };
 
 export default function RootLayout({
@@ -24,13 +27,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/img.png" type="image/png" sizes="any" />
-      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${appleGaramond.variable} ${iosevkaMono.variable} antialiased`}
       >
+        <div className="p-10">
+        <Navbar />
         {children}
+
+        </div>
       </body>
     </html>
   );
