@@ -13,9 +13,9 @@ export default function Card() {
 
   return (
     <>
-      <div className="bg-black w-xl h-96 rounded-xl p-4 flex flex-col">
+  <div className="bg-black w-full max-w-xs md:max-w-xl aspect-[16/10] rounded-xl p-2 md:p-4 flex flex-col">
         <div className="flex flex-row justify-between">
-          <p className="text-white text-xl font-mono">
+          <p className="text-white text-xs md:text-xl font-mono">
             <a href="/">@jny0444 . space</a>
           </p>
           <div className="flex gap-3 items-center">
@@ -23,12 +23,12 @@ export default function Card() {
               href={links[selected]}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white text-3xl cursor-pointer"
+              className="text-white text-xs md:text-3xl cursor-pointer"
             >
               <FiArrowUpLeft />
             </a>
             <select
-              className="text-white text-xl font-mono appearance-none"
+              className="text-white text-xs md:text-xl font-mono appearance-none"
               value={selected}
               onChange={(e) => setSelected(e.target.value)}
             >
@@ -38,7 +38,7 @@ export default function Card() {
             </select>
           </div>
         </div>
-        <p className="text-white text-xl font-mono mt-auto">
+  <p className="text-white text-xs md:text-xl font-mono mt-auto">
           <a href="mailto:thokchom.jnyandeep@gmail.com">
             mail: thokchom.jnyandeep@gmail.com
           </a>
