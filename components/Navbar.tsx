@@ -7,7 +7,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="relative pb-8">
+    <nav className="relative pb-8 z-50">
       <div className="flex items-center justify-between">
         <p className="text-4xl md:text-6xl font-bold">
           <a href="/">Jny0444.space</a>
@@ -46,7 +46,7 @@ export default function Navbar() {
       </ul>
       {/* Mobile menu */}
       {menuOpen && (
-        <ul className="flex flex-col gap-6 text-2xl mt-3 md:hidden bg-white absolute left-0 right-0 p-6">
+        <ul className="flex flex-col gap-6 text-2xl mt-3 md:hidden bg-white absolute left-0 right-0 p-6 w-screen -ml-6">
           <ListComponent href="/about" onClick={() => setMenuOpen(false)}>
             About
           </ListComponent>

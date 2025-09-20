@@ -1,4 +1,7 @@
+"use client";
+
 import { ReactNode, LiHTMLAttributes } from "react";
+import { usePathname } from "next/navigation";
 
 interface ListComponentProps extends LiHTMLAttributes<HTMLLIElement> {
   children: ReactNode;
@@ -10,8 +13,16 @@ export default function ListComponent({
   href,
   ...props
 }: ListComponentProps) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
   return (
-    <li className="hover:underline cursor-pointer" {...props}>
+    <li
+      className={`hover:underline cursor-pointer ${
+        isActive ? "underline" : ""
+      }`}
+      {...props}
+    >
       {href ? <a href={href}>{children}</a> : children}
     </li>
   );

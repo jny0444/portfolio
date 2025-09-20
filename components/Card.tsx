@@ -13,7 +13,7 @@ export default function Card() {
 
   return (
     <>
-  <div className="bg-black w-full max-w-xs md:max-w-xl aspect-[16/10] rounded-xl p-2 md:p-4 flex flex-col">
+      <div className="bg-black w-full max-w-xs md:max-w-xl aspect-[16/10] rounded-xl p-2 md:p-4 flex flex-col">
         <div className="flex flex-row justify-between">
           <p className="text-white text-xs md:text-xl font-mono">
             <a href="/">@jny0444 . space</a>
@@ -38,7 +38,7 @@ export default function Card() {
             </select>
           </div>
         </div>
-  <p className="text-white text-xs md:text-xl font-mono mt-auto">
+        <p className="text-white text-xs md:text-xl font-mono mt-auto">
           <a href="mailto:thokchom.jnyandeep@gmail.com">
             mail: thokchom.jnyandeep@gmail.com
           </a>
@@ -47,14 +47,3 @@ export default function Card() {
     </>
   );
 }
-
-/*
-. . . 0 .
-. . 0 0 .
-. 0 . 0 .
-0 0 0 0 0
-. . . 0 .
-. . . 0 .
-0 0 0 0 0
-. . . . .
-*/
