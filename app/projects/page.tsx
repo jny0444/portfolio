@@ -1,9 +1,9 @@
-export default function Project() {
+import Header from "@/components/Header";
+
+export default function Projects() {
     return (
         <>
-            <div data-scroll>
-                <p className="text-3xl">Projects</p>
-            </div>
+            <Header />
         </>
-    )
+    );
 }

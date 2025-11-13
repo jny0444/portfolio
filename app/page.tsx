@@ -1,9 +1,11 @@
-import OMR from "@/components/OMR";
+import Header from "@/components/Header";
 
 export default function Home() {
   return (
     <>
-      <OMR />
+      <div>
+        <Header />
+      </div>
     </>
   );
 }
