@@ -1,9 +1,5 @@
-import Header from "@/components/Header";
+import PageShell from "@/components/PageShell";
 
 export default function Contact() {
-    return (
-        <>
-            <Header />
-        </>
-    );
+  return <PageShell></PageShell>;
 }

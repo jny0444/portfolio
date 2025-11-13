@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 export default function Navbar() {
   const list = [
     { name: "Home", href: "/" },
@@ -13,12 +15,12 @@ export default function Navbar() {
       <ul className="flex flex-row md:flex-col justify-between md:items-end gap-4 md:gap-0">
         {list.map((item) => (
           <li key={item.name}>
-            <a
+            <Link
               href={item.href}
               className="block w-auto md:w-full md:text-right py-2 font-header font-extralight tracking-tight hover:text-gray-600"
             >
               {item.name}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
