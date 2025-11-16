@@ -14,7 +14,7 @@ export default function Header() {
             className="object-contain shrink-0"
             priority
           />
-          <h1 className="font-header font-extralight text-3xl sm:text-4xl md:text-6xl tracking-[-2px] py-2 leading-none">
+          <h1 className="font-header font-extralight text-3xl sm:text-4xl md:text-6xl tracking-tight md:tracking-[-2px] py-2 leading-none">
             jny0444
           </h1>
         </div>

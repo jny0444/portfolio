@@ -9,7 +9,7 @@ export default function PageShell({
         <div className="w-fill md:w-80">
           <Header />
         </div>
-        <div className="w-fill md:w-auto">{children}</div>
+        <div className="w-fill md:w-auto flex-1 flex items-center justify-center">{children}</div>
       </div>
     </>
   );
