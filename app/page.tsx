@@ -11,17 +11,18 @@ export default function Home() {
           </p>
         </div>
         <video
-          src="/home.mp4"
           autoPlay
           loop
           muted
-          preload="metadata"
+          preload="auto"
           width={740}
           height={260}
           playsInline
           className="-z-10 md:pl-10 md:-mr-20"
-          // className="-z-10 "
-        />
+        >
+          <source src="/home.webm" type="video/webm" />
+          <source src="/home-opt.mp4" type="video/mp4" />
+        </video>
       </div>
     </PageShell>
   );
