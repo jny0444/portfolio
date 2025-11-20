@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono);
   --font-header: "Helvetica Neue", sans-serif;
   --font-papyrus: "Papyrus", fantasy;
+  --breakpoint-xl: 1300px;
 }
 
 /* @media (prefers-color-scheme: dark) { */
